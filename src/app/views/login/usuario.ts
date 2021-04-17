@@ -1,4 +1,4 @@
 export class Usuario {
-  login: String = ''
-  senha: String = ''
+  login: string = ''
+  senha: string = ''
 }
