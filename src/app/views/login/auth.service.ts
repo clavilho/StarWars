@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root',
@@ -10,19 +9,17 @@ export class AuthService {
 
   constructor(private router: Router) {}
 
-  fazerLogin(usuario: Usuario) {
+  fazerLogin(login: string, senha: string) {
     if (
-      usuario.login == 'jv.clavilho@hotmail.com' &&
-      usuario.senha == 'admin'
+      (login == 'jv.clavilho@hotmail.com' && senha == 'admin') ||
+      (login == 'davimatos@frameworksystem.com' && senha == 'admin') ||
+      (login == 'pedrocoutinho@frwk.com.br' && senha == 'admin')
     ) {
       this.usuarioAutenticado = true;
-      alert('teste certo');
-
+      this.router.navigate(['/home']);
     } else {
       this.usuarioAutenticado = false;
-      alert('teste erro')
+      alert('Login ou senha invalido');
     }
-
-    this.router.navigate(['/home']);
   }
 }

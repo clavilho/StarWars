@@ -11,10 +11,11 @@ import { FilmesComponent } from './views/filmes/filmes.component';
 import { NavesComponent } from './views/naves/naves.component';
 import { VeiculosComponent } from './views/veiculos/veiculos.component';
 import { PlanetasComponent } from './views/planetas/planetas.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, HomeComponent, PersonagensComponent, FilmesComponent, NavesComponent, VeiculosComponent, PlanetasComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [AuthService],
   bootstrap: [AppComponent],
 })

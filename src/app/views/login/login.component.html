@@ -1,37 +1,34 @@
 <audio autoplay loop id="playAudio">
-  <source src="../../../assets/marcha-imperial.mp3">
+  <source src="../../../assets/marcha-imperial2.mp3">
 </audio>
 <div class="body">
 
-<div class="container">
-  <div class="row position-relative">
-    <form class="d-flex justify-content-center formulario needs-validation">
-      <div class="col-sm-5  bg-light p-5 border">
+  <div class="container">
+    <div class="row position-relative">
+      <form class="d-flex justify-content-center formulario needs-validation">
+        <form></form>
+        <div class="col-sm-5  bg-light p-5 border">
 
-        <div class="d-flex justify-content-center d-flex flex-column bd-highlight mb-3 topo">
-          <img src="../../../assets/icon.svg" class="icon p-2 bd-highlight">
-          <h4 class="p-2 bd-highlight">Star Wars</h4>
-        </div>
+          <div class="d-flex justify-content-center d-flex flex-column bd-highlight mb-3 topo">
+            <img src="../../../assets/icon.svg" class="icon p-2 bd-highlight">
+            <h4 class="p-2 bd-highlight">Star Wars</h4>
+          </div>
 
-        <div class="mb-3 form-floating ">
-          <input ng-model="usuario.login" type="email" class="form-control" id="email" placeholder="name@example.com"
-            required>
-          <label for="floatingInput">Email address</label>
+          <div class="mb-3 form-floating ">
+            <input ng-model="usuario.login" [formControl]="email" type="email" class="form-control" placeholder="name@example.com" required>
+            <label for="floatingInput" >Email address</label>
 
-        </div>
-        <div class="mb-3 form-floating">
-          <input ng-model="usuario.senha" type="password" class="form-control" id="senha" placeholder="Password"
-            required>
-          <label for="floatingPassword">Password</label>
-        </div>
+          </div>
+          <div class="mb-3 form-floating">
+            <input ng-model="usuario.senha" [formControl]="senha" type="password" class="form-control" placeholder="Password" required>
+            <label for="floatingPassword">Password</label>
+          </div>
 
-        <div class="d-flex justify-content-center">
-          <button type="submit" class="btn btn-dark d-flex btn-lg" (click)="logar()">Entrar</button>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-dark d-flex btn-lg" (click)="logar()">Entrar</button>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   </div>
 </div>
-</div>
-
-

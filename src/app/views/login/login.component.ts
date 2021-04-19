@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailValidator, FormControl } from '@angular/forms';
 
 import { AuthService } from './auth.service';
-import { Usuario } from './usuario';
 
 @Component({
   selector: 'app-login',
@@ -9,14 +9,14 @@ import { Usuario } from './usuario';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  usuario: Usuario = new Usuario();
+  email = new FormControl('');
+  senha = new FormControl('');
 
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   logar() {
-    this.authService.fazerLogin(this.usuario);
-    console.log(this.usuario);
+    this.authService.fazerLogin(this.email.value, this.senha.value);
   }
 }
