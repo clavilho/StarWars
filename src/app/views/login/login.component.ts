@@ -9,15 +9,14 @@ import { Usuario } from './usuario';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  private usuario: Usuario = new Usuario();
+  usuario: Usuario = new Usuario();
 
-  constructor(private authService: AuthService,) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit(): void {}
 
   logar() {
     this.authService.fazerLogin(this.usuario);
-
-    
+    console.log(this.usuario);
   }
 }

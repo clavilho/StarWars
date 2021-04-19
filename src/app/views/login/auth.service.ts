@@ -11,14 +11,17 @@ export class AuthService {
   constructor(private router: Router) {}
 
   fazerLogin(usuario: Usuario) {
-    // if (
-    //   usuario.login == 'jv.clavilho@hotmail.com' &&
-    //   usuario.senha == 'admin'
-    // ) {
-    //   this.usuarioAutenticado = true;
-    // } else {
-    //   this.usuarioAutenticado = false;
-    // }
+    if (
+      usuario.login == 'jv.clavilho@hotmail.com' &&
+      usuario.senha == 'admin'
+    ) {
+      this.usuarioAutenticado = true;
+      alert('teste certo');
+
+    } else {
+      this.usuarioAutenticado = false;
+      alert('teste erro')
+    }
 
     this.router.navigate(['/home']);
   }
