@@ -3,23 +3,23 @@ import { Router } from '@angular/router';
 import { Usuario } from './usuario';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
+  private usuarioAutenticado: boolean = false;
 
-  private usuarioAutenticado: boolean = false
+  constructor(private router: Router) {}
 
-  constructor(private router:Router) { }
+  fazerLogin(usuario: Usuario) {
+    // if (
+    //   usuario.login == 'jv.clavilho@hotmail.com' &&
+    //   usuario.senha == 'admin'
+    // ) {
+    //   this.usuarioAutenticado = true;
+    // } else {
+    //   this.usuarioAutenticado = false;
+    // }
 
-  fazerLogin(usuario: Usuario,) {
-  //   if (usuario.login === 'jv.clavilho@hotmail.com' && usuario.senha === '123') {
-  //     this.usuarioAutenticado = true
-  //     this.router.navigate(['/principal'])
-  //   }else{
-  //     this.usuarioAutenticado = false
-  //   }
-  // }
-
-  this.router.navigate(['/principal'])
+    this.router.navigate(['/home']);
   }
 }
