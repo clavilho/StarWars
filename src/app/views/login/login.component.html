@@ -15,12 +15,12 @@
           </div>
 
           <div class="mb-3 form-floating ">
-            <input ng-model="usuario.login" [formControl]="email" type="email" class="form-control" placeholder="name@example.com" required>
-            <label for="floatingInput" >Email address</label>
-
+            <input [formControl]="email" type="email" class="form-control" placeholder="name@example.com" required>
+            <label for="floatingInput">Email address</label>
           </div>
+
           <div class="mb-3 form-floating">
-            <input ng-model="usuario.senha" [formControl]="senha" type="password" class="form-control" placeholder="Password" required>
+            <input [formControl]="senha" type="password" class="form-control" placeholder="Password" required>
             <label for="floatingPassword">Password</label>
           </div>
 

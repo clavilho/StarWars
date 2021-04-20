@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmailValidator, FormControl } from '@angular/forms';
+import { FormControl } from '@angular/forms';
 
 import { AuthService } from './auth.service';
 

@@ -13,7 +13,8 @@ export class AuthService {
     if (
       (login == 'jv.clavilho@hotmail.com' && senha == 'admin') ||
       (login == 'davimatos@frameworksystem.com' && senha == 'admin') ||
-      (login == 'pedrocoutinho@frwk.com.br' && senha == 'admin')
+      (login == 'pedrocoutinho@frwk.com.br' && senha == 'admin') ||
+      (login == 'admin' && senha == 'admin')
     ) {
       this.usuarioAutenticado = true;
       this.router.navigate(['/home']);

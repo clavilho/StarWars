@@ -1,1 +1,10 @@
-<p>personagens works!</p>
+<h2>Personagens</h2>
+
+<div style="padding: 13px;">
+    <mat-spinner *ngIf="personagensArray.length === 0"></mat-spinner>
+    <mat-card *ngFor="let personagem of personagensArray" style="margin-top:11px;">
+        <mat-card-header>
+            <mat-card-title>{{personagem.name}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+</div>
