@@ -1,1 +1,14 @@
-<p>filmes works!</p>
+<h2>Filmes</h2>
+
+<div class="body">
+
+</div>
+<div style="padding: 13px;">
+    <mat-spinner *ngIf="filmesArray.length===0"></mat-spinner>
+
+    <mat-card *ngFor="let filmes of filmesArray" style="margin-top:11px;" class="example-card ">
+        <mat-card-title>{{filmes.title}}</mat-card-title>
+    </mat-card>
+</div>
+
+

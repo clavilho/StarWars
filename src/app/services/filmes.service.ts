@@ -1,20 +1,19 @@
 import { environment } from './../../environments/environment';
-import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PersonagensService {
+export class FilmesService {
   url = environment.baseUrl;
+
   constructor(private http: HttpClient) {}
 
-  getPersonagem(numeroPagina: number): Observable<any> {
+  getFilmes(numeroPagina: number): Observable<any> {
     const httpOptions: any = {};
     httpOptions.params = new HttpParams().set('page', String(numeroPagina));
-    console.log(httpOptions);
-    //http://swapi.dev/api/people/?page=4
-    return this.http.get(`${this.url}people`, httpOptions);
+    return this.http.get(`${this.url}films`, httpOptions);
   }
 }

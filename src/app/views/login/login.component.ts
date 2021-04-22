@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  email = new FormControl('');
+  login = new FormControl('');
   senha = new FormControl('');
 
   constructor(private authService: AuthService) {}
@@ -17,6 +17,6 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   logar() {
-    this.authService.fazerLogin(this.email.value, this.senha.value);
+    this.authService.fazerLogin(this.login.value, this.senha.value);
   }
 }

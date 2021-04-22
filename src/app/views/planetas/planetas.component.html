@@ -1,1 +1,16 @@
-<p>planetas works!</p>
+<h2>Planetas</h2>
+
+<div style="padding: 13px;" class="div">
+    <mat-spinner *ngIf="planetasArray.length === 0"></mat-spinner>
+
+    <mat-card *ngFor="let planeta of planetasArray" style="margin-top: 11px;" class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{planeta.name}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+
+</div>
+
+<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="planetasArray.length"  (page)="passarPagina($event)"></mat-paginator>
+
+<!--page)="passarPagina($event)"-->

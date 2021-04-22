@@ -1,1 +1,14 @@
-<p>naves works!</p>
+<h2>Naves</h2>
+
+<div style="padding: 13px;" class="div">
+    <mat-spinner *ngIf="navesArray.length === 0"></mat-spinner>
+
+    <mat-card *ngFor="let nave of navesArray" style="margin-top: 11px;" class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{nave.name}}</mat-card-title>
+        </mat-card-header>
+    </mat-card>
+
+</div>
+
+<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="navesArray.length" (page)="passarPagina($event)"></mat-paginator>

@@ -17,7 +17,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatCardModule } from '@angular/material/card';
-
+import {
+  MatPaginatorIntl,
+  MatPaginatorModule,
+} from '@angular/material/paginator';
+import { getPaginatorIntl } from 'src/assets/config/pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +42,15 @@ import { MatCardModule } from '@angular/material/card';
     MatToolbarModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    MatPaginatorModule,
   ],
-  providers: [AuthService, PersonagensService, HttpClient, HttpClientModule],
+  providers: [
+    AuthService,
+    PersonagensService,
+    HttpClient,
+    HttpClientModule,
+    { provide: MatPaginatorIntl, useValue: getPaginatorIntl() },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,10 +1,13 @@
 <h2>Personagens</h2>
 
-<div style="padding: 13px;">
+<div style="padding: 13px;" class="div">
     <mat-spinner *ngIf="personagensArray.length === 0"></mat-spinner>
-    <mat-card *ngFor="let personagem of personagensArray" style="margin-top:11px;">
+    <mat-card *ngFor="let personagem of personagensArray" style="margin-top:11px;" class="example-card ">
         <mat-card-header>
             <mat-card-title>{{personagem.name}}</mat-card-title>
         </mat-card-header>
     </mat-card>
 </div>
+
+<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="personagensArray.length" (page)="proximaPagina($event)">
+</mat-paginator>

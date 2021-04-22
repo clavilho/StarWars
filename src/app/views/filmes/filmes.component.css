@@ -1,0 +1,11 @@
+.example-card {
+  max-width: 400px;
+  background: black;
+}
+
+mat-card-title {
+  color: white;
+}
+div {
+  margin-left: 500px;
+}
