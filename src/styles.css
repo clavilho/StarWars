@@ -30,4 +30,13 @@ mat-spinner circle {
 h1,
 h2 {
   font-family: "star-jedi", arial;
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+  font-family: "star-jedi" !important;
+}
+
+.example-card {
+  cursor: pointer;
+  animation-delay: 3s;
 }

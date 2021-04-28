@@ -1,7 +1,9 @@
-import { MatPaginator, PageEvent } from '@angular/material';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
+import { Component, OnInit } from '@angular/core';
 import { NavesService } from 'src/app/services/naves.service';
 import { Naves } from './interface/naves';
+import { MatDialog } from '@angular/material/dialog';
+import { NavesModalComponent } from './naves-modal/naves-modal.component';
 
 @Component({
   selector: 'app-naves',
@@ -13,7 +15,7 @@ export class NavesComponent implements OnInit {
   pageIndex: number = 0;
   pageSize!: number;
 
-  constructor(private navesService: NavesService) {}
+  constructor(private navesService: NavesService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.listarNaves(1);
@@ -34,5 +36,12 @@ export class NavesComponent implements OnInit {
     console.log(pe);
 
     this.listarNaves(pe.pageIndex + 1);
+  }
+  openDialog(naves: any) {
+    this.dialog.open(NavesModalComponent, {
+      width: '500px',
+      height: '430px',
+      data: naves,
+    });
   }
 }

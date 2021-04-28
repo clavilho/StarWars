@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Descrição do Filme</h2>
+<mat-dialog-content class="mat-typography">
+    <!-- <h3>{{personagemModal.name}}</h3> -->
+    <h2>{{data.title}}</h2>
+    <p> {{data.episoe_id}}</p>
+    <p> <b>Introdução:</b> {{data.opening_crawl}}</p>
+    <p><b>Diretor: </b> {{data.director}}</p>
+    <p><b>Produtor: </b> {{data.producer}}</p>
+    <p><b>Data de lançamento: </b>{{data.release_date}}</p>
+
+</mat-dialog-content>
+<footer>
+    <div mat-dialog-actions>
+        <button class="btn btn-dark" (click)="onNoClick()">Fechar</button>
+    
+    </div>
+</footer>

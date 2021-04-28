@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PageEvent } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
+import { PageEvent } from '@angular/material/paginator';
 import { VeiculosService } from 'src/app/services/veiculos.service';
 import { Veiculos } from './interface/veiculos';
+import { VeiculosModalComponent } from './veiculos-modal/veiculos-modal.component';
 
 @Component({
   selector: 'app-veiculos',
@@ -12,7 +14,10 @@ export class VeiculosComponent implements OnInit {
   veiculoArray: Veiculos[] = [];
   pageIndex: number = 0;
   pageSize!: number;
-  constructor(private veiculoService: VeiculosService) {}
+  constructor(
+    private veiculoService: VeiculosService,
+    private dialogRef: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.listarVeiculos(1);
@@ -30,5 +35,13 @@ export class VeiculosComponent implements OnInit {
   proximaPagina(pe: PageEvent) {
     pe.pageIndex;
     this.listarVeiculos(pe.pageIndex + 1);
+  }
+
+  onClick(veiculo: any) {
+    this.dialogRef.open(VeiculosModalComponent, {
+      width: '500px',
+      height: '430px',
+      data: veiculo,
+    });
   }
 }

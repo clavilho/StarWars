@@ -2,12 +2,18 @@
 
 <div style="padding: 13px;" class="div">
     <mat-spinner *ngIf="personagensArray.length === 0"></mat-spinner>
-    <mat-card *ngFor="let personagem of personagensArray" style="margin-top:11px;" class="example-card ">
-        <mat-card-header>
-            <mat-card-title>{{personagem.name}}</mat-card-title>
-        </mat-card-header>
-    </mat-card>
-</div>
+    <div *ngFor="let personagem of personagensArray">
 
-<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="personagensArray.length" (page)="proximaPagina($event)">
+        <mat-card style="margin-top:11px;" class="example-card" (click)="openDialog(personagem)">
+            <mat-card-header>
+                <mat-card-title>{{personagem.name}}
+                </mat-card-title>
+            </mat-card-header>
+        </mat-card>
+
+    </div>
+</div>
+<!-- <app-personagem-modal [personagemModal]="personagensArray"></app-personagem-modal> -->
+<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="personagensArray.length"
+    (page)="proximaPagina($event)">
 </mat-paginator>

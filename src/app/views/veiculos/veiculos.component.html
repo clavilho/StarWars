@@ -2,11 +2,13 @@
 
 <div style="padding: 13px;" class="div">
     <mat-spinner *ngIf="veiculoArray.length === 0"></mat-spinner>
-    <mat-card *ngFor="let veiculo of veiculoArray" style="margin-top:11px;" class="example-card ">
-        <mat-card-header>
-            <mat-card-title>{{veiculo.name}}</mat-card-title>
-        </mat-card-header>
-    </mat-card>
+    <div *ngFor="let veiculo of veiculoArray" class="vei">
+        <mat-card style="margin-top:11px;" class="example-card " (click)="onClick(veiculo)">
+            <mat-card-header>
+                <mat-card-title>{{veiculo.name}}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
 
 </div>
 

@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'naves', component: NavesComponent },
   { path: 'planetas', component: PlanetasComponent },
   { path: 'veiculos', component: VeiculosComponent },
-  
 ];
 
 @NgModule({

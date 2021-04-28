@@ -6,9 +6,9 @@
 <div style="padding: 13px;">
     <mat-spinner *ngIf="filmesArray.length===0"></mat-spinner>
 
-    <mat-card *ngFor="let filmes of filmesArray" style="margin-top:11px;" class="example-card ">
-        <mat-card-title>{{filmes.title}}</mat-card-title>
-    </mat-card>
+    <div *ngFor="let filmes of filmesArray">
+        <mat-card style="margin-top:11px;" class="example-card" (click)="onClick(filmes)">
+            <mat-card-title>{{filmes.title}}</mat-card-title>
+        </mat-card>
+    </div>
 </div>
-
-

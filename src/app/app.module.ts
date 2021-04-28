@@ -22,6 +22,13 @@ import {
   MatPaginatorModule,
 } from '@angular/material/paginator';
 import { getPaginatorIntl } from 'src/assets/config/pagination';
+import { PersonagemModalComponent } from './views/personagens/personagem-modal/personagem-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { NavesModalComponent } from './views/naves/naves-modal/naves-modal.component';
+import { FilmesModalComponent } from './views/filmes/filmes-modal/filmes-modal.component';
+import { VeiculosModalComponent } from './views/veiculos/veiculos-modal/veiculos-modal.component';
+import { PlanetaModalComponent } from './views/planetas/planeta-modal/planeta-modal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +39,11 @@ import { getPaginatorIntl } from 'src/assets/config/pagination';
     NavesComponent,
     VeiculosComponent,
     PlanetasComponent,
+    PersonagemModalComponent,
+    NavesModalComponent,
+    FilmesModalComponent,
+    VeiculosModalComponent,
+    PlanetaModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +55,7 @@ import { getPaginatorIntl } from 'src/assets/config/pagination';
     MatProgressSpinnerModule,
     MatCardModule,
     MatPaginatorModule,
+    MatDialogModule,
   ],
   providers: [
     AuthService,

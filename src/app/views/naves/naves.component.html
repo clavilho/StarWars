@@ -2,13 +2,17 @@
 
 <div style="padding: 13px;" class="div">
     <mat-spinner *ngIf="navesArray.length === 0"></mat-spinner>
+    <div *ngFor="let nave of navesArray">
 
-    <mat-card *ngFor="let nave of navesArray" style="margin-top: 11px;" class="example-card">
-        <mat-card-header>
-            <mat-card-title>{{nave.name}}</mat-card-title>
-        </mat-card-header>
-    </mat-card>
+
+        <mat-card style="margin-top: 11px;" class="example-card" (click)="openDialog(nave)">
+            <mat-card-header>
+                <mat-card-title>{{nave.name}}</mat-card-title>
+            </mat-card-header>
+        </mat-card>
+    </div>
 
 </div>
 
-<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="navesArray.length" (page)="passarPagina($event)"></mat-paginator>
+<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="navesArray.length" (page)="passarPagina($event)">
+</mat-paginator>

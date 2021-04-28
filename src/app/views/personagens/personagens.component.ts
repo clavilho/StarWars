@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator, PageEvent } from '@angular/material';
+import { PersonagemModalComponent } from './personagem-modal/personagem-modal.component';
+import { Component, OnInit, Output } from '@angular/core';
 
 import { PersonagensService } from 'src/app/services/personagens.service';
 import { Personagens } from './interface/personagens';
+import { MatDialog } from '@angular/material/dialog';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-personagens',
@@ -10,11 +12,14 @@ import { Personagens } from './interface/personagens';
   styleUrls: ['./personagens.component.css'],
 })
 export class PersonagensComponent implements OnInit {
-  personagensArray: Personagens[] = [];
+  public personagensArray: Personagens[] = [];
   pageIndex: number = 0;
   pageSize!: number;
 
-  constructor(private personagemService: PersonagensService) {}
+  constructor(
+    private personagemService: PersonagensService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.listarPersonagens(1);
@@ -34,6 +39,15 @@ export class PersonagensComponent implements OnInit {
     this.pageIndex = pe.pageIndex;
 
     console.log(pe);
+    console.log(this.personagensArray.values);
     this.listarPersonagens(pe.pageIndex + 1);
+  }
+
+  openDialog(pessoa: any) {
+    this.dialog.open(PersonagemModalComponent, {
+      width: '500px',
+      height: '390px',
+      data: pessoa,
+    });
   }
 }

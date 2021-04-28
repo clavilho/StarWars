@@ -1,7 +1,9 @@
-import { MatPaginator, PageEvent } from '@angular/material';
+import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FilmesService } from 'src/app/services/filmes.service';
 import { Filme } from './interface/filmes';
+import { MatDialog } from '@angular/material/dialog';
+import { FilmesModalComponent } from './filmes-modal/filmes-modal.component';
 
 @Component({
   selector: 'app-filmes',
@@ -13,7 +15,10 @@ export class FilmesComponent implements OnInit {
   @ViewChild(MatPaginator)
   pageIndex: number = 1;
 
-  constructor(private filmeService: FilmesService) {}
+  constructor(
+    private filmeService: FilmesService,
+    public dialogRef: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.listarFilmes(this.pageIndex);
@@ -33,5 +38,13 @@ export class FilmesComponent implements OnInit {
   proximaPagina(pe: PageEvent) {
     pe.pageIndex++;
     this.listarFilmes(pe.pageIndex);
+  }
+
+  onClick(filme: any) {
+    this.dialogRef.open(FilmesModalComponent, {
+      height: '500px',
+      width: '600px',
+      data: filme,
+    });
   }
 }
