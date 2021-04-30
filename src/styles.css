@@ -1,11 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import url(https://allfont.net/allfont.css?fonts=star-jedi);
-html,
-body {
+html, body {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
@@ -19,16 +20,17 @@ body {
 mat-card-title {
   color: white;
 }
+
 .div {
-  margin-left: 442px;
+  display: grid;
+  justify-content: center;
 }
 
 mat-spinner circle {
   stroke: black !important;
 }
 
-h1,
-h2 {
+h1, h2 {
   font-family: "star-jedi", arial;
   display: flex;
   justify-content: center;
@@ -39,4 +41,28 @@ h2 {
 .example-card {
   cursor: pointer;
   animation-delay: 3s;
+}
+
+.logo-menu {
+  margin-left: 10px;
+}
+
+.menu-bar ul li a {
+  display: grid;
+}
+
+.p-menu {
+  margin: 5px 20px 0 !important;
+}
+
+.logo-menu-home {
+  width: 81px;
+  height: 80px;
+  margin-top: -13px;
+}
+
+.logo-menu-filme {
+  width: 76px !important;
+  height: 80px;
+  margin-top: -10px;
 }

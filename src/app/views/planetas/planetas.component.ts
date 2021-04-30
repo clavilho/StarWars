@@ -42,7 +42,7 @@ export class PlanetasComponent implements OnInit {
   onClick(planeta: any) {
     this.dialog.open(PlanetaModalComponent, {
       width: '500px',
-      height: '500px',
+      height: '415px',
       data: planeta,
     });
   }

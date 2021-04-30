@@ -18,7 +18,7 @@ export class FilmesComponent implements OnInit {
   constructor(
     private filmeService: FilmesService,
     public dialogRef: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.listarFilmes(this.pageIndex);
@@ -43,7 +43,7 @@ export class FilmesComponent implements OnInit {
   onClick(filme: any) {
     this.dialogRef.open(FilmesModalComponent, {
       height: '500px',
-      width: '600px',
+      width: '410px',
       data: filme,
     });
   }

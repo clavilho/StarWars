@@ -1,19 +1,32 @@
 <h2>Personagens</h2>
 
-<div style="padding: 13px;" class="div">
-    <mat-spinner *ngIf="personagensArray.length === 0"></mat-spinner>
-    <div *ngFor="let personagem of personagensArray">
+<div class="container">
+  <div class="card">
 
-        <mat-card style="margin-top:11px;" class="example-card" (click)="openDialog(personagem)">
-            <mat-card-header>
-                <mat-card-title>{{personagem.name}}
-                </mat-card-title>
-            </mat-card-header>
-        </mat-card>
-
+    <div class="card-content">
+      <div class="card-info">
+        <p>Personagens</p>
+        <h2>82</h2>
+      </div>
+      <img src="../../../assets/personagens.svg" style="background-color: black;">
     </div>
+  </div>
+</div>
+
+
+
+
+<div style="padding: 13px" class="div">
+  <mat-spinner *ngIf="personagensArray.length === 0"></mat-spinner>
+  <div *ngFor="let personagem of personagensArray">
+    <mat-card style="margin-top: 11px" class="example-card" (click)="openDialog(personagem)">
+      <mat-card-header>
+        <mat-card-title>{{ personagem.name }} </mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
 </div>
 <!-- <app-personagem-modal [personagemModal]="personagensArray"></app-personagem-modal> -->
 <mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="personagensArray.length"
-    (page)="proximaPagina($event)">
+  (page)="proximaPagina($event)">
 </mat-paginator>
