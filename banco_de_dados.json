@@ -1,0 +1,24 @@
+{
+  "login": [
+		{
+			"id": 1,
+			"user": "admin",
+			"password": "admin"
+		},
+		{
+			"id": 2,
+			"user": "jv.clavilho@hotmail.com",
+			"password": "1234"
+		},
+		{
+			"id": 1,
+			"user": "davimatos@frameworksystem.com",
+			"password": "1234"
+		},
+		{
+			"id": 1,
+			"user": "pedrocoutinho@frwk.com.br",
+			"password": "1234"
+		}
+	]
+}

@@ -9,11 +9,14 @@ import { Observable } from 'rxjs';
 export class FilmesService {
   url = environment.baseUrl;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getFilmes(numeroPagina: number): Observable<any> {
+  getFilmes(): Observable<any> {
     const httpOptions: any = {};
-    httpOptions.params = new HttpParams().set('page', String(numeroPagina));
+    httpOptions.params = new HttpParams().set('page', String());
     return this.http.get(`${this.url}films`, httpOptions);
+  }
+  getFilmeByUrl(url: string): Observable<any> {
+    return this.http.get(url)
   }
 }

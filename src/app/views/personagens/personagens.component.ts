@@ -19,7 +19,7 @@ export class PersonagensComponent implements OnInit {
   constructor(
     private personagemService: PersonagensService,
     public dialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.listarPersonagens(1);
@@ -47,7 +47,9 @@ export class PersonagensComponent implements OnInit {
     this.dialog.open(PersonagemModalComponent, {
       width: '500px',
       height: '390px',
-      data: pessoa,
+      data: pessoa
+
+
     });
   }
 }

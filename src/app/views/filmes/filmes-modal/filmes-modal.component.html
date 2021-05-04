@@ -7,11 +7,22 @@
     <p><b>Diretor: </b> {{data.director}}</p>
     <p><b>Produtor: </b> {{data.producer}}</p>
     <p><b>Data de lançamento: </b>{{data.release_date}}</p>
+    <p><b>Personagens: </b></p>
+    <div *ngFor="let personagem of personagemFilme">
+        <p>{{personagem.name}}</p>
+    </div>
+
+    <p><b>Planetas: </b></p>
+    <div *ngFor="let planetas of planetaFilme">
+        <p>{{planetas.name}}</p>
+    </div>
+
+
 
 </mat-dialog-content>
 <footer>
     <div mat-dialog-actions class="btn">
         <button class="btn btn-dark" (click)="onNoClick()">Fechar</button>
-    
+
     </div>
 </footer>

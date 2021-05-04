@@ -8,12 +8,15 @@ import { Observable } from 'rxjs';
 })
 export class PlanetasService {
   url = environment.baseUrl;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPlanetas(numeroPagina: number): Observable<any> {
     const httpOptions: any = {};
     httpOptions.params = new HttpParams().set('page', String(numeroPagina));
     //http://swapi.dev/api/planets/?page=2
     return this.http.get(`${this.url}planets`, httpOptions);
+  }
+  getPlanetaByUrl(url: string): Observable<any> {
+    return this.http.get(url)
   }
 }

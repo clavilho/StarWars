@@ -8,13 +8,18 @@ import { Observable } from 'rxjs';
 })
 export class PersonagensService {
   url = environment.baseUrl;
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPersonagem(numeroPagina: number): Observable<any> {
     const httpOptions: any = {};
     httpOptions.params = new HttpParams().set('page', String(numeroPagina));
-    console.log(httpOptions);
     //http://swapi.dev/api/people/?page=4
+    console.log(`${this.url}people`, httpOptions)
     return this.http.get(`${this.url}people`, httpOptions);
+  }
+
+  getPersonagemByUrl(url: string): Observable<any> {
+    return this.http.get(url)
+
   }
 }

@@ -14,18 +14,18 @@ export class FilmesComponent implements OnInit {
   filmesArray: Filme[] = [];
   @ViewChild(MatPaginator)
   pageIndex: number = 1;
-
+  
   constructor(
     private filmeService: FilmesService,
     public dialogRef: MatDialog
   ) { }
 
   ngOnInit(): void {
-    this.listarFilmes(this.pageIndex);
+    this.listarFilmes();
   }
 
-  listarFilmes(numeroPagin: number) {
-    this.filmeService.getFilmes(numeroPagin).subscribe(
+  listarFilmes() {
+    this.filmeService.getFilmes().subscribe(
       (filme) => {
         this.filmesArray = filme.results;
       },
@@ -37,7 +37,7 @@ export class FilmesComponent implements OnInit {
 
   proximaPagina(pe: PageEvent) {
     pe.pageIndex++;
-    this.listarFilmes(pe.pageIndex);
+    this.listarFilmes();
   }
 
   onClick(filme: any) {
@@ -45,6 +45,7 @@ export class FilmesComponent implements OnInit {
       height: '500px',
       width: '410px',
       data: filme,
+
     });
   }
 }

@@ -9,7 +9,10 @@
     <p><b>Terreno: </b>{{data.terrain}}</p>
     <p><b>Água na superficie: </b> {{data.surface_water}}</p>
     <p><b>População: </b> {{data.population}}</p>
-
+    <p><b>Filmes: </b></p>
+    <div *ngFor="let filmes of filmeArray">
+        <p>{{filmes.title}}</p>
+    </div>
 
 </mat-dialog-content>
 <div mat-dialog-actions class="btn">
