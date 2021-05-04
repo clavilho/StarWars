@@ -3,7 +3,8 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import url(https://allfont.net/allfont.css?fonts=star-jedi);
-html, body {
+html,
+body {
   height: 100%;
 }
 
@@ -30,7 +31,8 @@ mat-spinner circle {
   stroke: black !important;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-family: "star-jedi", arial;
   display: flex;
   justify-content: center;
@@ -55,14 +57,13 @@ h1, h2 {
   margin: 5px 20px 0 !important;
 }
 
-.logo-menu-home {
-  width: 81px;
-  height: 80px;
-  margin-top: -13px;
+ul li a img {
+  width: 40px;
 }
-
-.logo-menu-filme {
-  width: 76px !important;
-  height: 80px;
-  margin-top: -10px;
+ul li{
+  padding-left: 15px;
+  
+}
+.collapse{
+  justify-content: center;
 }
