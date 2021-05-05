@@ -46,7 +46,7 @@ export class PersonagensComponent implements OnInit {
   openDialog(pessoa: any) {
     this.dialog.open(PersonagemModalComponent, {
       width: '500px',
-      height: '390px',
+      height: '500px',
       data: pessoa
 
 

@@ -1,5 +1,6 @@
 export interface Login {
     id: number,
-    login: string,
+    user: string,
     password: string
 }
+

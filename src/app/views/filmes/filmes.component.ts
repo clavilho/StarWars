@@ -42,8 +42,8 @@ export class FilmesComponent implements OnInit {
 
   onClick(filme: any) {
     this.dialogRef.open(FilmesModalComponent, {
-      height: '500px',
-      width: '410px',
+      height: '600px',
+      width: '500px',
       data: filme,
 
     });

@@ -13,3 +13,11 @@ img {
   flex-direction: column;
   justify-content: center;
 }
+
+.card-title {
+  justify-content: center;
+  display: flex;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: large;
+}
