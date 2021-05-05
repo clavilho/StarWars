@@ -1,3 +1,5 @@
+<app-nav-bar></app-nav-bar>
+
 <h2>Naves</h2>
 <div class="container">
     <div class="card">
@@ -16,7 +18,7 @@
     <div *ngFor="let nave of navesArray">
 
 
-        <mat-card style="margin-top: 11px;" class="example-card" (click)="openDialog(nave)">
+        <mat-card style="margin-top: 11px;" class="example-card  card-films" (click)="openDialog(nave)">
             <mat-card-header>
                 <mat-card-title>{{nave.name}}</mat-card-title>
             </mat-card-header>

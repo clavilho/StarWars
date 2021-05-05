@@ -67,3 +67,10 @@ ul li{
 .collapse{
   justify-content: center;
 }
+
+.card-films:hover{
+  -moz-transform: scale(1.1);
+	-webkit-transform: scale(1.1);
+	transform: scale(1.1);
+  opacity: 0.6;
+}

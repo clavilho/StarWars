@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AuthService } from './auth.service';
 
@@ -9,14 +9,19 @@ import { AuthService } from './auth.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  login = new FormControl('');
-  senha = new FormControl('');
+  loginForm!: FormGroup;
+  constructor(private authService: AuthService) { }
 
-  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      login: new FormControl(null, Validators.required),
+      senha: new FormControl(null, Validators.required)
+    });
+  }
 
   logar() {
-    this.authService.fazerLogin(this.login.value, this.senha.value);
+    const loginValue = this.loginForm.value
+    this.authService.fazerLogin(loginValue.login, loginValue.senha);
   }
 }

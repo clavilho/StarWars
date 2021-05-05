@@ -28,6 +28,7 @@ import { NavesModalComponent } from './views/naves/naves-modal/naves-modal.compo
 import { FilmesModalComponent } from './views/filmes/filmes-modal/filmes-modal.component';
 import { VeiculosModalComponent } from './views/veiculos/veiculos-modal/veiculos-modal.component';
 import { PlanetaModalComponent } from './views/planetas/planeta-modal/planeta-modal.component';
+import { NavBarComponent } from './views/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { PlanetaModalComponent } from './views/planetas/planeta-modal/planeta-mo
     FilmesModalComponent,
     VeiculosModalComponent,
     PlanetaModalComponent,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

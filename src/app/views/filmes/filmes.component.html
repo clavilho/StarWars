@@ -1,3 +1,5 @@
+<app-nav-bar></app-nav-bar>
+
 <h2>Filmes</h2>
 <div class="container">
     <div class="card">
@@ -18,7 +20,7 @@
     <mat-spinner *ngIf="filmesArray.length===0"></mat-spinner>
 
     <div *ngFor="let filmes of filmesArray">
-        <mat-card style="margin-top:11px;" class="example-card" (click)="onClick(filmes)">
+        <mat-card style="margin-top:11px;" class="example-card card-films" (click)="onClick(filmes)">
             <mat-card-title>{{filmes.title}}</mat-card-title>
         </mat-card>
     </div>
