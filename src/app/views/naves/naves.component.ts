@@ -4,6 +4,7 @@ import { NavesService } from 'src/app/services/naves.service';
 import { Naves } from './interface/naves';
 import { MatDialog } from '@angular/material/dialog';
 import { NavesModalComponent } from './naves-modal/naves-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-naves',
@@ -15,7 +16,7 @@ export class NavesComponent implements OnInit {
   pageIndex: number = 0;
   pageSize!: number;
 
-  constructor(private navesService: NavesService, public dialog: MatDialog) {}
+  constructor(private navesService: NavesService, public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
     this.listarNaves(1);
@@ -27,7 +28,10 @@ export class NavesComponent implements OnInit {
         this.navesArray = nave.results;
         this.pageSize = nave.count;
       },
-      (err) => alert('Deu ruim ' + err)
+      (err) => {
+        this.router.navigate(['/erro'])
+        alert('Deu ruim ' + err)
+      }
     );
   }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 import { VeiculosService } from 'src/app/services/veiculos.service';
 import { Veiculos } from './interface/veiculos';
 import { VeiculosModalComponent } from './veiculos-modal/veiculos-modal.component';
@@ -16,8 +17,9 @@ export class VeiculosComponent implements OnInit {
   pageSize!: number;
   constructor(
     private veiculoService: VeiculosService,
-    private dialogRef: MatDialog
-  ) {}
+    private dialogRef: MatDialog,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.listarVeiculos(1);
@@ -29,7 +31,10 @@ export class VeiculosComponent implements OnInit {
         this.veiculoArray = veiculo.results;
         this.pageSize = veiculo.count;
       },
-      (err) => alert('Deu ruim ' + err)
+      (err) => {
+        this.router.navigate(['/erro'])
+        alert('Deu ruim ' + err)
+      }
     );
   }
   proximaPagina(pe: PageEvent) {

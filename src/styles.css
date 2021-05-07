@@ -60,17 +60,18 @@ h2 {
 ul li a img {
   width: 40px;
 }
-ul li{
+ul li {
   padding-left: 15px;
-  
 }
-.collapse{
+.collapse {
   justify-content: center;
 }
 
-.card-films:hover{
+.card-films:hover {
   -moz-transform: scale(1.1);
-	-webkit-transform: scale(1.1);
-	transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
   opacity: 0.6;
 }
+
+

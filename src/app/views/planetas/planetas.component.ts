@@ -4,6 +4,7 @@ import { PageEvent } from '@angular/material/paginator';
 import { PlanetasService } from './../../services/planetas.service';
 import { Component, OnInit } from '@angular/core';
 import { Planetas } from './interface/planetas';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-planetas',
@@ -16,8 +17,9 @@ export class PlanetasComponent implements OnInit {
   pageSize!: number;
   constructor(
     private planetasService: PlanetasService,
-    private dialog: MatDialog
-  ) {}
+    private dialog: MatDialog,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.listarPlanetas(1);
@@ -29,7 +31,10 @@ export class PlanetasComponent implements OnInit {
         this.planetasArray = planeta.results;
         this.pageSize = planeta.count;
       },
-      (err) => alert('Deu ruim ' + err)
+      (err) => {
+        this.router.navigate(['/erro'])
+        alert('Deu ruim ' + err)
+      }
     );
   }
 

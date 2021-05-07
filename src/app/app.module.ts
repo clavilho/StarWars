@@ -29,6 +29,8 @@ import { FilmesModalComponent } from './views/filmes/filmes-modal/filmes-modal.c
 import { VeiculosModalComponent } from './views/veiculos/veiculos-modal/veiculos-modal.component';
 import { PlanetaModalComponent } from './views/planetas/planeta-modal/planeta-modal.component';
 import { NavBarComponent } from './views/nav-bar/nav-bar.component';
+import { ErroPageComponent } from './views/erro-page/erro-page.component';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +48,8 @@ import { NavBarComponent } from './views/nav-bar/nav-bar.component';
     VeiculosModalComponent,
     PlanetaModalComponent,
     NavBarComponent,
+    ErroPageComponent,
+   
   ],
   imports: [
     BrowserModule,
@@ -68,4 +72,4 @@ import { NavBarComponent } from './views/nav-bar/nav-bar.component';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -54,3 +54,7 @@ mat-card-header {
 .card-content img {
   vertical-align: unset;
 }
+
+.selected:checked ~ label{
+  background-color: #e54e43;
+}

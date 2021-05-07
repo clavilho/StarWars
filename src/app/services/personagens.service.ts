@@ -1,7 +1,9 @@
+
 import { environment } from './../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { EMPTY, Observable } from 'rxjs';
+import { catchError, map, retry } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +22,12 @@ export class PersonagensService {
 
   getPersonagemByUrl(url: string): Observable<any> {
     return this.http.get(url)
+  }
+  //https://swapi.dev/api/people/?search=
+  pesquisaPersonagem(termo: string): Observable<any> {
+    return this.http.get(`${this.url}people/?search=${termo}`).pipe(retry(3), catchError(() => {
+      return EMPTY
+    }))
 
   }
 }

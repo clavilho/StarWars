@@ -4,6 +4,7 @@ import { FilmesService } from 'src/app/services/filmes.service';
 import { Filme } from './interface/filmes';
 import { MatDialog } from '@angular/material/dialog';
 import { FilmesModalComponent } from './filmes-modal/filmes-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-filmes',
@@ -14,10 +15,11 @@ export class FilmesComponent implements OnInit {
   filmesArray: Filme[] = [];
   @ViewChild(MatPaginator)
   pageIndex: number = 1;
-  
+
   constructor(
     private filmeService: FilmesService,
-    public dialogRef: MatDialog
+    public dialogRef: MatDialog,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,8 +31,9 @@ export class FilmesComponent implements OnInit {
       (filme) => {
         this.filmesArray = filme.results;
       },
-      (erro) => {
-        alert('Deu ruim' + erro);
+      (err) => {
+        this.router.navigate(['/erro'])
+        console.log('O erro é o seguinte: ', err)
       }
     );
   }

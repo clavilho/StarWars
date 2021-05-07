@@ -1,3 +1,8 @@
 .navbar {
   height: 100px;
 }
+.selected {
+  cursor: default;
+  background: rgba(233, 232, 232, 0.356);
+  border-radius: 15px;
+}
