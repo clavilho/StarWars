@@ -1,8 +1,11 @@
+import { LoginErroComponent } from './modals/login-erro/login-erro.component';
 import { Injectable, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 import { LoginService } from 'src/app/services/login.service';
 import { Login } from './interface/login';
+
 
 @Injectable({
   providedIn: 'root',
@@ -10,16 +13,19 @@ import { Login } from './interface/login';
 export class AuthService {
   private usuarioAutenticado: boolean = false;
   private usuarios!: Login[]
-  constructor(private router: Router, private loginService: LoginService) {
+  constructor(private router: Router, private loginService: LoginService, public dialogRef: MatDialog) {
 
+  }
+
+  fazerLogin2(login: Login) {
+    //return this.angularFireAuth.auth.signInWithEmailAndPassword(login.user, login.password)
   }
 
   fazerLogin(login: string, senha: string) {
     //O CODIGO COMENTADO ABAIXO É A AUTENTICAÇÃO NA FAKE API
     //PARA QUE ELE SEJA RODADO E ACESSE A API É NECESSARIO RODAR O COMANDO
     //json-server --watch banco-de-dados.json
-    
-    // console.log('teste')
+
     // this.loginService.getUser().subscribe(
     //   (users) => {
     //     this.usuarios = users
@@ -36,6 +42,8 @@ export class AuthService {
 
     if (login === 'admin' && senha === 'admin') {
       this.router.navigate(['/home'])
+    } else {
+      this.dialogRef.open(LoginErroComponent)
     }
   }
 }

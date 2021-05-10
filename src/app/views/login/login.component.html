@@ -16,18 +16,36 @@
           </div>
 
           <div class="mb-3 form-floating ">
-            <input formControlName="login" type="text" class="form-control" placeholder="Login" required>
+            <input formControlName="login" type="text"
+              class="form-control {{ loginPrimitivo ? '' :  loginValidado ? 'is-valid': 'is-invalid'}}"
+              placeholder="Login" [value]='login' required (input)='validadorLogin()'>
+            <h5 class="invalid-feedback" style="color: red;">Favor digitar login valido</h5>
+
             <label for="floatingInput">Login</label>
           </div>
 
           <div class="mb-3 form-floating">
-            <input formControlName="senha" type="password" class="form-control" placeholder="Password" required>
+            <input formControlName="senha" type="password"
+              class="form-control {{senhaPrimitivo?'':  senhaValidade ? 'is-valid': 'is-invalid'}}"
+              placeholder="Password" [value]='senha' required (input)='validadorSenha()'>
+            <h5 class="invalid-feedback" style="color: red;">Favor digitar senha valida</h5>
             <label for="floatingPassword">Senha</label>
           </div>
 
-          <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-dark d-flex btn-lg">Entrar</button>
+          <div class="form-group row">
+            <div class="d-flex justify-content-center btn-sm">
+              <div class="col-md-3">
+                <button type="submit" class="btn btn-dark d-flex btn-lg">Entrar</button>
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-dark d-flex btn-lg">Cadastrar</button>
+              </div>
+            </div>
+
           </div>
+
+
+
         </div>
       </form>
     </div>
