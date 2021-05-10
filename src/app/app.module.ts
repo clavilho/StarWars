@@ -30,6 +30,8 @@ import { VeiculosModalComponent } from './views/veiculos/veiculos-modal/veiculos
 import { PlanetaModalComponent } from './views/planetas/planeta-modal/planeta-modal.component';
 import { NavBarComponent } from './views/nav-bar/nav-bar.component';
 import { ErroPageComponent } from './views/erro-page/erro-page.component';
+import { LoginErroComponent } from './views/login/modals/login-erro/login-erro.component';
+import { LoginModalComponent } from './views/login/modals/login-modal/login-modal.component';
 
 
 @NgModule({
@@ -49,7 +51,8 @@ import { ErroPageComponent } from './views/erro-page/erro-page.component';
     PlanetaModalComponent,
     NavBarComponent,
     ErroPageComponent,
-   
+    LoginErroComponent,
+    LoginModalComponent
   ],
   imports: [
     BrowserModule,
