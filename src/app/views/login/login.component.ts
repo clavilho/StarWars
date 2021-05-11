@@ -1,6 +1,6 @@
+import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 
 import { AuthService } from './auth.service';
@@ -13,18 +13,35 @@ import { LoginModalComponent } from './modals/login-modal/login-modal.component'
 })
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
-  //controle de validação dos campos
+
+  //controle de validação de campos
   login!: string
   senha!: string
   loginValidado!: boolean
-  senhaValidade!: boolean
+  senhaValidado!: boolean
   //estado primitivo dos campos
   loginPrimitivo: boolean = true
   senhaPrimitivo: boolean = true
 
+  constructor(private authService: AuthService, private dialogRef: MatDialog) { }
 
 
-  constructor(private authService: AuthService, public dialogRef: MatDialog, private router: Router) { }
+  validarLogin() {
+    const loginValue = this.loginForm.value
+    this.login = loginValue.login
+    this.loginPrimitivo = false
+    if (this.login === '') {
+      this.loginValidado = false
+    } else this.loginValidado = true
+  }
+  validarSenha() {
+    const senhaValue = this.loginForm.value
+    this.senha = senhaValue.senha
+    this.senhaPrimitivo = false
+    if (this.senha === '') {
+      this.senhaValidado = false
+    } else this.senhaValidado = true
+  }
 
 
   ngOnInit(): void {
@@ -34,45 +51,13 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  validadorLogin() {
-    const loginValue = this.loginForm.value
-    this.login = loginValue.login
-
-    this.loginPrimitivo = false
-
-    if (this.login === '') {
-      this.loginValidado = false
-    } else this.loginValidado = true
-
-
-
-  }
-  validadorSenha() {
-    const loginValue = this.loginForm.value
-    this.senha = loginValue.senha
-    this.senhaPrimitivo = false
-
-
-    if (this.senha === '') {
-      this.senhaValidade = false
-    } else this.senhaValidade = true
-
-
-  }
-
   logar() {
     const loginValue = this.loginForm.value
-    if ((loginValue.login === "" || loginValue.login === null) || (loginValue.senha === "" || loginValue.senha === null)) {
+    if ((loginValue.login === '' || loginValue.login === null) || (loginValue.senha === '' || loginValue.senha === null)) {
       this.dialogRef.open(LoginModalComponent)
       this.senhaPrimitivo = false
       this.loginPrimitivo = false
     }
-    else {
-      this.authService.fazerLogin(loginValue.login, loginValue.senha);
-    }
-
-
-
+    else this.authService.fazerLogin(loginValue.login, loginValue.senha);
   }
-
 }

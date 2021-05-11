@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "StarWars": {
+    "testeNESSAPORRA": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/StarWars",
+            "outputPath": "dist/testeNESSAPORRA",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,13 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/bootstrap/dist/js/bootstrap.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -54,13 +46,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
                 }
               ]
             }
@@ -69,18 +61,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "StarWars:build"
+            "browserTarget": "testeNESSAPORRA:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "StarWars:build:production"
+              "browserTarget": "testeNESSAPORRA:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "StarWars:build"
+            "browserTarget": "testeNESSAPORRA:build"
           }
         },
         "test": {
@@ -95,7 +87,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -118,16 +109,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "StarWars:serve"
+            "devServerTarget": "testeNESSAPORRA:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "StarWars:serve:production"
+              "devServerTarget": "testeNESSAPORRA:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "StarWars"
+  "defaultProject": "testeNESSAPORRA"
 }
