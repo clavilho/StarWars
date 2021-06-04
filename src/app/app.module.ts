@@ -12,7 +12,7 @@ import { VeiculosComponent } from './views/veiculos/veiculos.component';
 import { PlanetasComponent } from './views/planetas/planetas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { PersonagensService } from './services/personagens.service';
+import { PersonagensService } from './views/shared/services/personagens.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -28,7 +28,7 @@ import { NavesModalComponent } from './views/naves/naves-modal/naves-modal.compo
 import { FilmesModalComponent } from './views/filmes/filmes-modal/filmes-modal.component';
 import { VeiculosModalComponent } from './views/veiculos/veiculos-modal/veiculos-modal.component';
 import { PlanetaModalComponent } from './views/planetas/planeta-modal/planeta-modal.component';
-import { NavBarComponent } from './views/nav-bar/nav-bar.component';
+import { NavBarComponent } from './views/shared/nav-bar/nav-bar.component';
 import { ErroPageComponent } from './views/erro-page/erro-page.component';
 import { LoginModalComponent } from './views/login/modals/login-modal/login-modal.component';
 import { LoginErroComponent } from './views/login/modals/login-erro/login-erro.component';

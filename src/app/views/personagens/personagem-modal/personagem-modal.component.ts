@@ -1,10 +1,7 @@
-import { PlanetasService } from './../../../services/planetas.service';
-import { Veiculos } from './../../veiculos/interface/veiculos';
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FilmesService } from 'src/app/services/filmes.service';
+import { FilmesService } from 'src/app/views/shared/services/filmes.service';
 import { Filme } from '../../filmes/interface/filmes';
-import { Planetas } from '../../planetas/interface/planetas';
 
 @Component({
   selector: 'app-personagem-modal',

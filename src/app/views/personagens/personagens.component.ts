@@ -1,12 +1,12 @@
 import { PersonagemModalComponent } from './personagem-modal/personagem-modal.component';
 import { Component, OnInit } from '@angular/core';
 
-import { PersonagensService } from 'src/app/services/personagens.service';
+import { PersonagensService } from 'src/app/views/shared/services/personagens.service';
 import { Personagens } from './interface/personagens';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable, Subject } from 'rxjs';
-import { debounceTime, switchMap } from 'rxjs/operators';
+import { debounceTime, switchMap, tap } from 'rxjs/operators';
 import { UpperCasePipe } from '@angular/common';
 import { Router } from '@angular/router';
 
@@ -23,7 +23,7 @@ export class PersonagensComponent implements OnInit {
   pageSize!: number;
 
   private subjectPesquisa: Subject<string> = new Subject<string>()
-  public personSearch!: Observable<Personagens[]>
+  public personSearch!: Observable<any>
   public pessoaPesquisada: Personagens[] = []
 
 
@@ -61,8 +61,6 @@ export class PersonagensComponent implements OnInit {
       width: '500px',
       height: '500px',
       data: pessoa
-
-
     });
   }
 
@@ -71,12 +69,22 @@ export class PersonagensComponent implements OnInit {
     this.personSearch = this.subjectPesquisa
       .pipe(
         debounceTime(100),//executa a ação apos 3 segundo
-        switchMap((termo: string) => { //SwitchMap é usado para processar apenas a ultima requisição feita independente de quantas tenham sito feitas antes
-          return this.personagemService.pesquisaPersonagem(termo)
-        }))
+        // switchMap((termo: string) => { //SwitchMap é usado para processar apenas a ultima requisição feita independente de quantas tenham sito feitas antes
+        //   return this.personagemService.pesquisaPersonagem(termo)
+        // })
+      )
 
-    this.personSearch.subscribe((data: any) => {
-      this.pessoaPesquisada = data.results
+    this.personSearch.subscribe((data: string) => {
+      if (data.length >= 3) {
+        this.personagemService.pesquisaPersonagem(data).subscribe((result: any) => {
+          console.log(result)
+          this.pessoaPesquisada = result.results
+        })
+        
+      } else {
+        this.pessoaPesquisada = []
+        console.log(this.pessoaPesquisada ,'teste')
+      }
 
     })
     // this.personagemService.pesquisaPersonagem(termoDaBusca).subscribe((data) => {

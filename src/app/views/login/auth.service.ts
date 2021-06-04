@@ -2,7 +2,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoginService } from 'src/app/services/login.service';
+import { LoginService } from 'src/app/views/shared/services/login.service';
 import { Login } from './interface/login';
 import { LoginErroComponent } from './modals/login-erro/login-erro.component';
 

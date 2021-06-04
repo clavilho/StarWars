@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { FilmesService } from 'src/app/services/filmes.service';
+import { FilmesService } from 'src/app/views/shared/services/filmes.service';
 import { Filme } from '../../filmes/interface/filmes';
 import { PlanetasComponent } from '../planetas.component';
 
