@@ -1,7 +1,7 @@
 import { PageEvent } from '@angular/material/paginator';
 import { Component, OnInit } from '@angular/core';
 import { NavesService } from 'src/app/views/shared/services/naves.service';
-import { Naves } from './interface/naves';
+import { Naves } from '../shared/interface/naves';
 import { MatDialog } from '@angular/material/dialog';
 import { NavesModalComponent } from './naves-modal/naves-modal.component';
 import { Router } from '@angular/router';

@@ -1,9 +1,9 @@
-import { Planetas } from './../../planetas/interface/planetas';
+import { Planetas } from '../../shared/interface/planetas';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PersonagensService } from 'src/app/views/shared/services/personagens.service';
 import { PlanetasService } from 'src/app/views/shared/services/planetas.service';
-import { Personagens } from '../../personagens/interface/personagens';
+import { Personagens } from '../../shared/interface/personagens';
 import { FilmesComponent } from '../filmes.component';
 
 @Component({

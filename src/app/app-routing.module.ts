@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ErroPageComponent } from './views/erro-page/erro-page.component';
+import { ErroPageComponent } from './views/shared/erro-page/erro-page.component';
 
 import { FilmesComponent } from './views/filmes/filmes.component';
 import { HomeComponent } from './views/home/home.component';

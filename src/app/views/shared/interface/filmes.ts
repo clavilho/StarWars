@@ -1,7 +1,7 @@
-import { Naves } from '../../naves/interface/naves';
-import { Personagens } from '../../personagens/interface/personagens';
-import { Planetas } from '../../planetas/interface/planetas';
-import { Veiculos } from '../../veiculos/interface/veiculos';
+import { Naves } from './naves';
+import { Personagens } from './personagens';
+import { Planetas } from './planetas';
+import { Veiculos } from './veiculos';
 
 export interface Filme {
   id: number;

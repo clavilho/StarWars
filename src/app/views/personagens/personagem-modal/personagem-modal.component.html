@@ -1,22 +1,22 @@
 <h2 mat-dialog-title>Descrição dos personagens</h2>
 <mat-dialog-content class="mat-typography">
 
-    <!-- <h3>{{personagemModal.name}}</h3> -->
-    <h2>{{data.name}}</h2>
-    <p><b>Peso: </b>{{data.mass}}</p>
-    <p><b>Altura: </b>{{data.height}}</p>
-    <p><b>Cor do cabelo: </b>{{data.hair_color}}</p>
-    <p><b>Cor da pele: </b>{{data.skin_color}}</p>
-    <p><b>Cor do olho: </b>{{data.eye_color}}</p>
-    <p><b>Ano de aniversario: </b>{{data.birth_year}}</p>
-    <p><b>Filmes: </b></p>
+  <!-- <h3>{{personagemModal.name}}</h3> -->
+  <h2>{{data.name}}</h2>
+  <p><b>Peso: </b>{{data.mass}}</p>
+  <p><b>Altura: </b>{{data.height}}</p>
+  <p><b>Cor do cabelo: </b>{{data.hair_color}}</p>
+  <p><b>Cor da pele: </b>{{data.skin_color}}</p>
+  <p><b>Cor do olho: </b>{{data.eye_color}}</p>
+  <p><b>Ano de aniversario: </b>{{data.birth_year}}</p>
+  <p><b>Filmes: </b></p>a
 
-    <div *ngFor="let filme of filmesPersonagemArray">
-        <p>{{filme.title}}</p>
-    </div>
+  <div *ngFor="let filme of filmesPersonagemArray">
+    <p>{{filme.title}}</p>
+  </div>
 
 </mat-dialog-content>
 <div mat-dialog-actions class="btn">
-    <button class="btn btn-dark" (click)="onNoClick()">Fechar</button>
+  <button class="btn btn-dark" (click)="onNoClick()">Fechar</button>
 
 </div>

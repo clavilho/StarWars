@@ -2,7 +2,7 @@ import { PersonagemModalComponent } from './personagem-modal/personagem-modal.co
 import { Component, OnInit } from '@angular/core';
 
 import { PersonagensService } from 'src/app/views/shared/services/personagens.service';
-import { Personagens } from './interface/personagens';
+import { Personagens } from '../shared/interface/personagens';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { Observable, Subject } from 'rxjs';
@@ -80,7 +80,7 @@ export class PersonagensComponent implements OnInit {
           console.log(result)
           this.pessoaPesquisada = result.results
         })
-        
+
       } else {
         this.pessoaPesquisada = []
         console.log(this.pessoaPesquisada ,'teste')

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { PlanetasService } from '../shared/services/planetas.service';
 import { Component, OnInit } from '@angular/core';
-import { Planetas } from './interface/planetas';
+import { Planetas } from '../shared/interface/planetas';
 import { Router } from '@angular/router';
 
 @Component({

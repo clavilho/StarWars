@@ -3,7 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { LoginService } from 'src/app/views/shared/services/login.service';
-import { Login } from './interface/login';
+import { Login } from '../shared/interface/login';
 import { LoginErroComponent } from './modals/login-erro/login-erro.component';
 
 @Injectable({
@@ -38,7 +38,7 @@ export class AuthService {
 
     if (login === 'admin' && senha === 'admin') {
       this.router.navigate(['/home'])
-    
+
 
     } else this.dialogRef.open(LoginErroComponent)
   }

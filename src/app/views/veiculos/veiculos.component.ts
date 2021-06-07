@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { VeiculosService } from 'src/app/views/shared/services/veiculos.service';
-import { Veiculos } from './interface/veiculos';
+import { Veiculos } from '../shared/interface/veiculos';
 import { VeiculosModalComponent } from './veiculos-modal/veiculos-modal.component';
 
 @Component({

@@ -1,20 +1,20 @@
 <h2 mat-dialog-title>Descição Planeta</h2>
 
 <mat-dialog-content class="mat-typography">
-    <h2>{{data.name}}</h2>
-    <p><b>Periodo Orbitaç: </b>{{data.orbital_period}}</p>
-    <p><b>Diametro: </b>{{data.diameter}}</p>
-    <p><b>Clima: </b>{{data.climate}}</p>
-    <p><b>Gravidade: </b>{{data.gravity}}</p>
-    <p><b>Terreno: </b>{{data.terrain}}</p>
-    <p><b>Água na superficie: </b> {{data.surface_water}}</p>
-    <p><b>População: </b> {{data.population}}</p>
-    <p><b>Filmes: </b></p>
-    <div *ngFor="let filmes of filmeArray">
-        <p>{{filmes.title}}</p>
-    </div>
+  <h2>{{data.name}}</h2>
+  <p><b>Periodo Orbitaç: </b>{{data.orbital_period}}</p>
+  <p><b>Diametro: </b>{{data.diameter}}</p>
+  <p><b>Clima: </b>{{data.climate}}</p>
+  <p><b>Gravidade: </b>{{data.gravity}}</p>
+  <p><b>Terreno: </b>{{data.terrain}}</p>
+  <p><b>Água na superficie: </b> {{data.surface_water}}</p>
+  <p><b>População: </b> {{data.population}}</p>
+  <p><b>Filmes: </b></p>
+  <div *ngFor="let filmes of filmeArray">
+    <p>{{filmes.title}}</p>
+  </div>
 
 </mat-dialog-content>
 <div mat-dialog-actions class="btn">
-    <button class="btn btn-dark" (click)="onNoClick()">Fechar</button>
+  <button class="btn btn-dark" (click)="onNoClick()">Fechar</button>
 </div>

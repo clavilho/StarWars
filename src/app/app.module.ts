@@ -29,9 +29,10 @@ import { FilmesModalComponent } from './views/filmes/filmes-modal/filmes-modal.c
 import { VeiculosModalComponent } from './views/veiculos/veiculos-modal/veiculos-modal.component';
 import { PlanetaModalComponent } from './views/planetas/planeta-modal/planeta-modal.component';
 import { NavBarComponent } from './views/shared/nav-bar/nav-bar.component';
-import { ErroPageComponent } from './views/erro-page/erro-page.component';
+import { ErroPageComponent } from './views/shared/erro-page/erro-page.component';
 import { LoginModalComponent } from './views/login/modals/login-modal/login-modal.component';
 import { LoginErroComponent } from './views/login/modals/login-erro/login-erro.component';
+import { DataPipe } from './views/shared/pipes/data.pipe';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { LoginErroComponent } from './views/login/modals/login-erro/login-erro.c
     ErroPageComponent,
     LoginModalComponent,
     LoginErroComponent,
+    DataPipe,
 
   ],
   imports: [

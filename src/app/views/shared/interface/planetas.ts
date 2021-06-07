@@ -1,5 +1,5 @@
-import { Filme } from '../../filmes/interface/filmes';
-import { Personagens } from '../../personagens/interface/personagens';
+import { Filme } from './filmes';
+import { Personagens } from './personagens';
 
 export interface Planetas {
   name: string;

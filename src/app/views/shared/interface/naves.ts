@@ -1,4 +1,4 @@
-import { Filme } from '../../filmes/interface/filmes';
+import { Filme } from './filmes';
 
 export interface Naves {
   name: string;

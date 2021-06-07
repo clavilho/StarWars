@@ -6,7 +6,7 @@
     <p> <b>Introdução:</b> {{data.opening_crawl}}</p>
     <p><b>Diretor: </b> {{data.director}}</p>
     <p><b>Produtor: </b> {{data.producer}}</p>
-    <p><b>Data de lançamento: </b>{{data.release_date}}</p>
+    <p><b>Data de lançamento: </b>{{data.release_date | data}}</p>
     <p><b>Personagens: </b></p>
     <div *ngFor="let personagem of personagemFilme">
         <p>{{personagem.name}}</p>
