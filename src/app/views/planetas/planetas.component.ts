@@ -15,11 +15,14 @@ export class PlanetasComponent implements OnInit {
   planetasArray: Planetas[] = [];
   pageIndex: number = 0;
   pageSize!: number;
+  imagem = '../../../assets/planetas.svg';
+  titulo = 'Planetas';
+
   constructor(
     private planetasService: PlanetasService,
     private dialog: MatDialog,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.listarPlanetas(1);
@@ -32,8 +35,8 @@ export class PlanetasComponent implements OnInit {
         this.pageSize = planeta.count;
       },
       (err) => {
-        this.router.navigate(['/erro'])
-        alert('Deu ruim ' + err)
+        this.router.navigate(['/erro']);
+        alert('Deu ruim ' + err);
       }
     );
   }

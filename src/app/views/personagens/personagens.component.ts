@@ -10,8 +10,6 @@ import { debounceTime, switchMap, tap } from 'rxjs/operators';
 import { UpperCasePipe } from '@angular/common';
 import { Router } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-personagens',
   templateUrl: './personagens.component.html',
@@ -21,21 +19,22 @@ export class PersonagensComponent implements OnInit {
   public personagensArray: Personagens[] = [];
   pageIndex: number = 0;
   pageSize!: number;
+  imagem = '../../../assets/personagens.svg';
+  titulo = 'Personagens'
 
-  private subjectPesquisa: Subject<string> = new Subject<string>()
-  public personSearch!: Observable<any>
-  public pessoaPesquisada: Personagens[] = []
 
+  private subjectPesquisa: Subject<string> = new Subject<string>();
+  public personSearch!: Observable<any>;
+  public pessoaPesquisada: Personagens[] = [];
 
   constructor(
     private personagemService: PersonagensService,
     public dialog: MatDialog,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.listarPersonagens(1);
-
   }
 
   listarPersonagens(numeroPagin: number) {
@@ -45,8 +44,8 @@ export class PersonagensComponent implements OnInit {
         this.pageSize = personagem.count;
       },
       (err) => {
-        this.router.navigate(['/erro'])
-        console.log(err)
+        this.router.navigate(['/erro']);
+        console.log(err);
       }
     );
   }
@@ -60,37 +59,35 @@ export class PersonagensComponent implements OnInit {
     this.dialog.open(PersonagemModalComponent, {
       width: '500px',
       height: '500px',
-      data: pessoa
+      data: pessoa,
     });
   }
 
   pesquisar(termoDaBusca: string): void {
-    this.subjectPesquisa.next(termoDaBusca) //fica observando o componente
-    this.personSearch = this.subjectPesquisa
-      .pipe(
-        debounceTime(100),//executa a ação apos 3 segundo
-        // switchMap((termo: string) => { //SwitchMap é usado para processar apenas a ultima requisição feita independente de quantas tenham sito feitas antes
-        //   return this.personagemService.pesquisaPersonagem(termo)
-        // })
-      )
+    this.subjectPesquisa.next(termoDaBusca); //fica observando o componente
+    this.personSearch = this.subjectPesquisa.pipe(
+      debounceTime(100) //executa a ação apos 3 segundo
+      // switchMap((termo: string) => { //SwitchMap é usado para processar apenas a ultima requisição feita independente de quantas tenham sito feitas antes
+      //   return this.personagemService.pesquisaPersonagem(termo)
+      // })
+    );
 
     this.personSearch.subscribe((data: string) => {
       if (data.length >= 3) {
-        this.personagemService.pesquisaPersonagem(data).subscribe((result: any) => {
-          console.log(result)
-          this.pessoaPesquisada = result.results
-        })
-
+        this.personagemService
+          .pesquisaPersonagem(data)
+          .subscribe((result: any) => {
+            console.log(result);
+            this.pessoaPesquisada = result.results;
+          });
       } else {
-        this.pessoaPesquisada = []
-        console.log(this.pessoaPesquisada ,'teste')
+        this.pessoaPesquisada = [];
+        console.log(this.pessoaPesquisada, 'teste');
       }
-
-    })
+    });
     // this.personagemService.pesquisaPersonagem(termoDaBusca).subscribe((data) => {
     //   this.pessoaPesquisada = data.results
     //   console.log(this.pessoaPesquisada)
     // })
-
   }
 }

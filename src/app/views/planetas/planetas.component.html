@@ -1,31 +1,32 @@
 <app-nav-bar></app-nav-bar>
-<h2>Planetas</h2>
-<div class="container">
-    <div class="card">
 
-        <div class="card-content">
-            <div class="card-info">
-                <p>Planetas</p>
-                <h2>39</h2>
-            </div>
-            <img src="../../../assets/planetas.svg" style="background-color: black;">
-        </div>
-    </div>
-</div>
-<div style="padding: 13px;" class="div">
-    <mat-spinner *ngIf="planetasArray.length === 0"></mat-spinner>
 
-    <div *ngFor="let planeta of planetasArray">
-        <mat-card style="margin-top: 11px;" class="example-card card-films" (click)="onClick(planeta)">
-            <mat-card-header>
-                <mat-card-title>{{planeta.name}}</mat-card-title>
-            </mat-card-header>
-        </mat-card>
-    </div>
 
+<app-card [titulo]="titulo" [totalArray]="39" [imagem]="imagem"></app-card>
+
+
+
+<div style="padding: 13px" class="div">
+  <mat-spinner *ngIf="planetasArray.length === 0"></mat-spinner>
+
+  <div *ngFor="let planeta of planetasArray">
+    <mat-card
+      style="margin-top: 11px"
+      class="example-card card-films"
+      (click)="onClick(planeta)"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ planeta.name }}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
 </div>
 
-<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="planetasArray.length"
-    (page)="passarPagina($event)"></mat-paginator>
+<mat-paginator
+  [pageIndex]="pageIndex"
+  [length]="pageSize"
+  [pageSize]="planetasArray.length"
+  (page)="passarPagina($event)"
+></mat-paginator>
 
 <!--page)="passarPagina($event)"-->

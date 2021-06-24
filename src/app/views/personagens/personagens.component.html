@@ -1,37 +1,37 @@
 <app-nav-bar></app-nav-bar>
 
-<h2>Personagens</h2>
-<div class="input">
 
-  <input type="text" class="form-control" placeholder="Pesquise o personagem desejado" #termoDaPesquisa
-    (keyup)="pesquisar(termoDaPesquisa.value)">
+<div class="input">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Pesquise o personagem desejado"
+    #termoDaPesquisa
+    (keyup)="pesquisar(termoDaPesquisa.value)"
+  />
   <ul class="list-group list-group-flush">
-    <a style="text-decoration: none;" class="pesquisados">
-      <li class="list-group-item" *ngFor='let personagem of pessoaPesquisada' (click)="openDialog(personagem)">
-        {{personagem.name}}</li>
+    <a style="text-decoration: none" class="pesquisados">
+      <li
+        class="list-group-item"
+        *ngFor="let personagem of pessoaPesquisada"
+        (click)="openDialog(personagem)"
+      >
+        {{ personagem.name }}
+      </li>
     </a>
   </ul>
 </div>
 
-<div class="container">
-  <div class="card">
-    <div class="card-content">
-      <div class="card-info">
-        <p>Personagens</p>
-        <h2>82</h2>
-      </div>
-      <img src="../../../assets/personagens.svg" style="background-color: black;">
-    </div>
-  </div>
-</div>
-
-
-
+<app-card [imagem]="imagem" [titulo]="titulo" [totalArray]="82"></app-card>
 
 <div style="padding: 13px" class="div">
   <mat-spinner *ngIf="personagensArray.length === 0"></mat-spinner>
   <div *ngFor="let personagem of personagensArray">
-    <mat-card style="margin-top: 11px" class="example-card card-films" (click)="openDialog(personagem)">
+    <mat-card
+      style="margin-top: 11px"
+      class="example-card card-films"
+      (click)="openDialog(personagem)"
+    >
       <mat-card-header>
         <mat-card-title>{{ personagem.name }} </mat-card-title>
       </mat-card-header>
@@ -39,8 +39,11 @@
   </div>
 </div>
 
-
 <!-- <app-personagem-modal [personagemModal]="personagensArray"></app-personagem-modal> -->
-<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="personagensArray.length"
-  (page)="proximaPagina($event)">
+<mat-paginator
+  [pageIndex]="pageIndex"
+  [length]="pageSize"
+  [pageSize]="personagensArray.length"
+  (page)="proximaPagina($event)"
+>
 </mat-paginator>

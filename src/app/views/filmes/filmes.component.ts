@@ -5,7 +5,6 @@ import { Filme } from '../shared/interface/filmes';
 import { MatDialog } from '@angular/material/dialog';
 import { FilmesModalComponent } from './filmes-modal/filmes-modal.component';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-filmes',
   templateUrl: './filmes.component.html',
@@ -15,12 +14,14 @@ export class FilmesComponent implements OnInit {
   filmesArray: Filme[] = [];
   @ViewChild(MatPaginator)
   pageIndex: number = 1;
+  imagem: string = '../../../assets/movie.svg';
+  titulo: string = 'Filmes';
 
   constructor(
     private filmeService: FilmesService,
     public dialogRef: MatDialog,
     private router: Router
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.listarFilmes();
@@ -32,8 +33,8 @@ export class FilmesComponent implements OnInit {
         this.filmesArray = filme.results;
       },
       (err) => {
-        this.router.navigate(['/erro'])
-        console.log('O erro é o seguinte: ', err)
+        this.router.navigate(['/erro']);
+        console.log('O erro é o seguinte: ', err);
       }
     );
   }
@@ -48,7 +49,6 @@ export class FilmesComponent implements OnInit {
       height: '600px',
       width: '500px',
       data: filme,
-
     });
   }
 }

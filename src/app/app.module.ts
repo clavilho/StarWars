@@ -33,6 +33,7 @@ import { ErroPageComponent } from './views/shared/erro-page/erro-page.component'
 import { LoginModalComponent } from './views/login/modals/login-modal/login-modal.component';
 import { LoginErroComponent } from './views/login/modals/login-erro/login-erro.component';
 import { DataPipe } from './views/shared/pipes/data.pipe';
+import { CardComponent } from './views/shared/card/card.component';
 
 
 @NgModule({
@@ -55,6 +56,7 @@ import { DataPipe } from './views/shared/pipes/data.pipe';
     LoginModalComponent,
     LoginErroComponent,
     DataPipe,
+    CardComponent,
 
   ],
   imports: [

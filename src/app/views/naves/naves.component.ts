@@ -15,8 +15,15 @@ export class NavesComponent implements OnInit {
   navesArray: Naves[] = [];
   pageIndex: number = 0;
   pageSize!: number;
+  imagem: string = '../../../assets/nave.svg';
+  titulo: string = 'Naves';
 
-  constructor(private navesService: NavesService, public dialog: MatDialog, private router: Router) { }
+
+  constructor(
+    private navesService: NavesService,
+    public dialog: MatDialog,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.listarNaves(1);
@@ -29,8 +36,8 @@ export class NavesComponent implements OnInit {
         this.pageSize = nave.count;
       },
       (err) => {
-        this.router.navigate(['/erro'])
-        alert('Deu ruim ' + err)
+        this.router.navigate(['/erro']);
+        alert('Deu ruim ' + err);
       }
     );
   }

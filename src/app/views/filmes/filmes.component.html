@@ -1,27 +1,18 @@
 <app-nav-bar></app-nav-bar>
 
-<h2>Filmes</h2>
-<div class="container">
-    <div class="card">
+<app-card [totalArray]="filmesArray.length" [imagem]="imagem" [titulo]="titulo"> </app-card>
 
-        <div class="card-content">
-            <div class="card-info">
-                <p>Filmes</p>
-                <h2>{{filmesArray.length}}</h2>
-            </div>
-            <img src="../../../assets/movie.svg" style="background-color: black;">
-        </div>
-    </div>
-</div>
-<div class="body">
+<div class="body"></div>
+<div style="padding: 13px" class="div">
+  <mat-spinner *ngIf="filmesArray.length === 0"></mat-spinner>
 
-</div>
-<div style="padding: 13px;" class="div">
-    <mat-spinner *ngIf="filmesArray.length===0"></mat-spinner>
-
-    <div *ngFor="let filmes of filmesArray">
-        <mat-card style="margin-top:11px;" class="example-card card-films" (click)="onClick(filmes)">
-            <mat-card-title>{{filmes.title}}</mat-card-title>
-        </mat-card>
-    </div>
+  <div *ngFor="let filmes of filmesArray">
+    <mat-card
+      style="margin-top: 11px"
+      class="example-card card-films"
+      (click)="onClick(filmes)"
+    >
+      <mat-card-title>{{ filmes.title }}</mat-card-title>
+    </mat-card>
+  </div>
 </div>

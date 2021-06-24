@@ -1,31 +1,26 @@
 <app-nav-bar></app-nav-bar>
 
-<h2>Naves</h2>
-<div class="container">
-    <div class="card">
+<app-card [imagem]="imagem" [titulo]="titulo" [totalArray]="36"></app-card>
 
-        <div class="card-content">
-            <div class="card-info">
-                <p>Naves</p>
-                <h2>36</h2>
-            </div>
-            <img src="../../../assets/nave.svg" style="background-color: black;">
-        </div>
-    </div>
-</div>
-<div style="padding: 13px;" class="div">
-    <mat-spinner *ngIf="navesArray.length === 0"></mat-spinner>
-    <div *ngFor="let nave of navesArray">
-
-
-        <mat-card style="margin-top: 11px;" class="example-card  card-films" (click)="openDialog(nave)">
-            <mat-card-header>
-                <mat-card-title>{{nave.name}}</mat-card-title>
-            </mat-card-header>
-        </mat-card>
-    </div>
-
+<div style="padding: 13px" class="div">
+  <mat-spinner *ngIf="navesArray.length === 0"></mat-spinner>
+  <div *ngFor="let nave of navesArray">
+    <mat-card
+      style="margin-top: 11px"
+      class="example-card card-films"
+      (click)="openDialog(nave)"
+    >
+      <mat-card-header>
+        <mat-card-title>{{ nave.name }}</mat-card-title>
+      </mat-card-header>
+    </mat-card>
+  </div>
 </div>
 
-<mat-paginator [pageIndex]="pageIndex" [length]="pageSize" [pageSize]="navesArray.length" (page)="passarPagina($event)">
+<mat-paginator
+  [pageIndex]="pageIndex"
+  [length]="pageSize"
+  [pageSize]="navesArray.length"
+  (page)="passarPagina($event)"
+>
 </mat-paginator>
