@@ -1,10 +1,11 @@
 import { MatPaginator, PageEvent } from '@angular/material/paginator';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FilmesService } from 'src/app/views/shared/services/filmes.service';
-import { Filme } from '../shared/interface/filmes';
+
 import { MatDialog } from '@angular/material/dialog';
 import { FilmesModalComponent } from './filmes-modal/filmes-modal.component';
 import { Router } from '@angular/router';
+import { FilmesService } from 'src/app/shared/services/filmes.service';
+import { Filme } from 'src/app/shared/interface/filmes';
 @Component({
   selector: 'app-filmes',
   templateUrl: './filmes.component.html',

@@ -1,10 +1,11 @@
 import { PageEvent } from '@angular/material/paginator';
 import { Component, OnInit } from '@angular/core';
-import { NavesService } from 'src/app/views/shared/services/naves.service';
-import { Naves } from '../shared/interface/naves';
+
 import { MatDialog } from '@angular/material/dialog';
 import { NavesModalComponent } from './naves-modal/naves-modal.component';
 import { Router } from '@angular/router';
+import { Naves } from 'src/app/shared/interface/naves';
+import { NavesService } from 'src/app/shared/services/naves.service';
 
 @Component({
   selector: 'app-naves',
@@ -17,7 +18,6 @@ export class NavesComponent implements OnInit {
   pageSize!: number;
   imagem: string = '../../../assets/nave.svg';
   titulo: string = 'Naves';
-
 
   constructor(
     private navesService: NavesService,

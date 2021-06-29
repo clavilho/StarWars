@@ -1,8 +1,3 @@
-.example-card {
-  max-width: 400px;
-  background: black;
-}
-
 h1,
 h2 {
   font-style: bold !important;
@@ -15,50 +10,3 @@ h2 {
   display: flex;
   justify-content: center;
 }
-
-.card {
-  background: black;
-  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
-  border-radius: 16px;
-  display: flex;
-  height: 132px;
-  width: 240px;
-  justify-content: center;
-  opacity: 0.85;
-}
-
-.card-info {
-  display: inline-block;
-  justify-content: center;
-  padding-right: 36px;
-  margin-left: 23px;
-}
-
-.card card-content {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.card-info h2 {
-  font-size: 54px !important;
-  font-weight: bold !important;
-  color: #ffba33 !important;
-}
-
-.card-info p {
-  font-size: 16px;
-  color: white;
-}
-
-mat-card-header {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-}
-
-.card-content img {
-  vertical-align: unset;
-}
-
-

@@ -1,9 +1,9 @@
+import { EventEmitter } from '@angular/core';
+import { Login } from './../../shared/interface/login';
 import { MatDialog } from '@angular/material/dialog';
 import { Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { LoginService } from 'src/app/views/shared/services/login.service';
-import { Login } from '../shared/interface/login';
 import { LoginErroComponent } from './modals/login-erro/login-erro.component';
 
 @Injectable({
@@ -11,10 +11,10 @@ import { LoginErroComponent } from './modals/login-erro/login-erro.component';
 })
 export class AuthService {
   private usuarioAutenticado: boolean = false;
-  private usuarios!: Login[]
-  constructor(private router: Router, private loginService: LoginService, private dialogRef: MatDialog) {
+  private usuarios!: Login[];
 
-  }
+  mostrarMenuEmitter = new EventEmitter<boolean>();
+  constructor(private router: Router, private dialogRef: MatDialog) {}
 
   fazerLogin(login: string, senha: string) {
     //O CODIGO COMENTADO ABAIXO É A AUTENTICAÇÃO NA FAKE API
@@ -37,9 +37,8 @@ export class AuthService {
     // )
 
     if (login === 'admin' && senha === 'admin') {
-      this.router.navigate(['/home'])
-
-
-    } else this.dialogRef.open(LoginErroComponent)
+      this.mostrarMenuEmitter.emit(true);
+      this.router.navigate(['/home']);
+    } else this.dialogRef.open(LoginErroComponent);
   }
 }

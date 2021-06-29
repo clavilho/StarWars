@@ -1,10 +1,10 @@
 import { PlanetaModalComponent } from './planeta-modal/planeta-modal.component';
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
-import { PlanetasService } from '../shared/services/planetas.service';
 import { Component, OnInit } from '@angular/core';
-import { Planetas } from '../shared/interface/planetas';
 import { Router } from '@angular/router';
+import { Planetas } from 'src/app/shared/interface/planetas';
+import { PlanetasService } from 'src/app/shared/services/planetas.service';
 
 @Component({
   selector: 'app-planetas',
